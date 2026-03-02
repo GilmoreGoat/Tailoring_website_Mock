@@ -629,7 +629,7 @@
         <div class="container">
             <h2 class="section-title">Request a Quote</h2>
             <div class="form-container">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                <form id="quote-form" action="#" method="POST">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" name="name" class="form-control" required placeholder="Your full name">
@@ -692,6 +692,15 @@
 
     <!-- JavaScript -->
     <script>
+        // Lead Capture Form Submission
+        const quoteForm = document.getElementById("quote-form");
+        if (quoteForm) {
+            quoteForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert('Thank you! We will contact you shortly.');
+            });
+        }
+
         // Hamburger Menu Toggle
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-menu");
