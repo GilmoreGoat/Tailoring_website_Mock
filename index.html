@@ -103,17 +103,6 @@
             color: var(--navy);
         }
 
-        .btn-call {
-            background-color: var(--navy);
-            color: var(--white);
-            border: 2px solid var(--navy);
-        }
-
-        .btn-call:hover {
-            background-color: #112a4f;
-            border-color: #112a4f;
-        }
-
         /* Navigation */
         .navbar {
             background-color: var(--navy);
@@ -629,7 +618,7 @@
         <div class="container">
             <h2 class="section-title">Request a Quote</h2>
             <div class="form-container">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                <form id="quote-form" action="#" method="POST">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" name="name" class="form-control" required placeholder="Your full name">
@@ -678,21 +667,93 @@
                 <div class="footer-map">
                     <h3 class="footer-title">Location</h3>
                     <div class="map-container">
-                        <!-- Placeholder for Google Maps Embed -->
-                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Map placeholder" style="object-fit: cover; width: 100%; height: 100%;">
-                        <div style="position: absolute; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 4px;">Google Maps Embed Placeholder</div>
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Tailoring%20Express,%203232%20Governor%20Dr,%20San%20Diego,%20CA%2092122&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
             </div>
 
             <div class="copyright">
-                <p>&copy; 2023 Tailoring Express. All rights reserved.</p>
+                <p>&copy; 2026 Tailoring Express. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        // Lead Capture Form Submission
+        const quoteForm = document.getElementById("quote-form");
+        if (quoteForm) {
+            quoteForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert('Thank you! We will contact you shortly.');
+            });
+        }
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const bars = hamburger.querySelectorAll(".bar");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        // Animate hamburger to X
+        hamburger.addEventListener("click", function() {
+            if (this.classList.contains("active")) {
+                bars[0].style.transform = "translateY(8px) rotate(45deg)";
+                bars[1].style.opacity = "0";
+                bars[2].style.transform = "translateY(-8px) rotate(-45deg)";
+            } else {
+                bars[0].style.transform = "none";
+                bars[1].style.opacity = "1";
+                bars[2].style.transform = "none";
+            }
+        });
+
+        // Reset hamburger styles on resize if moving to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+                bars[0].style.transform = "none";
+                bars[1].style.opacity = "1";
+                bars[2].style.transform = "none";
+            }
+        });
+
+        // Smooth Scrolling is handled by CSS (scroll-behavior: smooth),
+        // but adding fallback for older browsers or specific offset needs
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Only prevent default if it's strictly an anchor link on the same page
+                if (this.getAttribute('href').startsWith('#')) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 70; // Adjust based on navbar height
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
