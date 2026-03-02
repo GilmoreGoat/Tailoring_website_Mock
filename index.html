@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert alterations and tailoring in University City, San Diego. Precision fits, fast turnaround, and trusted local service.">
+    <title>Tailoring Express - Alterations & Tailoring in University City</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --navy: #0A192F;
+            --white: #FFFFFF;
+            --gold: #D4AF37;
+            --gold-hover: #b5952f;
+            --light-bg: #f9f9f9;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--navy);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-hover);
+            border-color: var(--gold-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        .btn-call {
+            background-color: var(--navy);
+            color: var(--white);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-call:hover {
+            background-color: #112a4f;
+            border-color: #112a4f;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--navy);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 25, 47, 0.7);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 1;
+        }
+
+        .hero-title {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .trust-badges-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: var(--font-heading);
+        }
+
+        .badge-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light-bg);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--navy);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .reviews .section-title {
+            color: var(--white);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .review-author {
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--gold);
+        }
+
+        .google-rating {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .google-rating span {
+            color: var(--gold);
+        }
+
+        /* Lead Capture Form */
+        .quote-section {
+            background-color: var(--light-bg);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 15px;
+        }
+
+        /* Footer & Location */
+        .footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-info i {
+            color: var(--gold);
+            margin-top: 5px;
+        }
+
+        .map-container {
+            height: 250px;
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                background-color: var(--navy);
+                flex-direction: column;
+                text-align: center;
+                transition: 0.3s;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .trust-badges-container {
+                gap: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">Tailoring Express</a>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li class="nav-item"><a href="#location" class="nav-link">Location</a></li>
+                <li class="nav-item"><a href="tel:8585550199" class="btn btn-primary" style="padding: 8px 16px;">Call for a Quote</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Unsplash placeholder for a tailor measuring a suit -->
+        <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Tailor measuring suit" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Expert Alterations & Tailoring in University City.</h1>
+            <p class="hero-subtitle">Precision fits, fast turnaround, and trusted local service for all your clothing needs.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="tel:8585550199" class="btn btn-outline">Call: (858) 555-0199</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="container trust-badges-container">
+            <div class="badge">
+                <span class="badge-icon">⏱️</span>
+                <span>Fast Turnaround</span>
+            </div>
+            <div class="badge">
+                <span class="badge-icon">✨</span>
+                <span>Satisfaction Guaranteed</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">👔</div>
+                    <h3 class="service-title">Suit & Dress Alterations</h3>
+                    <p class="service-desc">Expert alterations for jackets, trousers, bridal gowns, and formal wear.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👖</div>
+                    <h3 class="service-title">Everyday Hemming & Tapering</h3>
+                    <p class="service-desc">Perfect fit for your everyday jeans, slacks, and skirts.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧵</div>
+                    <h3 class="service-title">Repairs & Zippers</h3>
+                    <p class="service-desc">Quality patching, button replacement, and zipper fixes to extend garment life.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📏</div>
+                    <h3 class="service-title">Custom Fitting</h3>
+                    <p class="service-desc">Transforming off-the-rack clothing to look and feel completely bespoke.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Reviews -->
+    <section id="reviews" class="section reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Absolutely saved my suit for a wedding. Fast, professional, and fits perfectly now."</p>
+                    <p class="review-author">- Local Customer</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The only place in San Diego I trust with my dresses. Fair pricing and incredible attention to detail."</p>
+                    <p class="review-author">- Local Customer</p>
+                </div>
+            </div>
+
+            <div class="google-rating">
+                <p><span>★ 4.2 Star Rating</span> on Google</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Form -->
+    <section id="quote" class="section quote-section">
+        <div class="container">
+            <h2 class="section-title">Request a Quote</h2>
+            <div class="form-container">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required placeholder="(858) 555-0199">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="garment" class="form-label">Garment Type</label>
+                        <select id="garment" name="garment" class="form-control" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="suit">Suit/Tuxedo</option>
+                            <option value="bridal">Bridal/Dress</option>
+                            <option value="everyday">Everyday Wear</option>
+                            <option value="repair">Zipper/Repair</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Get My Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Location -->
+    <footer id="location" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-info">
+                    <h3 class="footer-title">Visit Us</h3>
+                    <p>📍 3232 Governor Dr<br>San Diego, CA 92122</p>
+                    <p>📞 <a href="tel:8585550199">(858) 555-0199</a></p>
+                </div>
+
+                <div class="footer-info">
+                    <h3 class="footer-title">Hours</h3>
+                    <p>🕒 Mon-Fri: 9 AM - 6 PM</p>
+                    <p>🕒 Sat: 10 AM - 4 PM</p>
+                    <p>🕒 Sun: Closed</p>
+                </div>
+
+                <div class="footer-map">
+                    <h3 class="footer-title">Location</h3>
+                    <div class="map-container">
+                        <!-- Placeholder for Google Maps Embed -->
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Map placeholder" style="object-fit: cover; width: 100%; height: 100%;">
+                        <div style="position: absolute; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 4px;">Google Maps Embed Placeholder</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Tailoring Express. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        // Animate hamburger to X
+        hamburger.addEventListener("click", function() {
+            const bars = this.querySelectorAll(".bar");
+            if (this.classList.contains("active")) {
+                bars[0].style.transform = "translateY(8px) rotate(45deg)";
+                bars[1].style.opacity = "0";
+                bars[2].style.transform = "translateY(-8px) rotate(-45deg)";
+            } else {
+                bars[0].style.transform = "none";
+                bars[1].style.opacity = "1";
+                bars[2].style.transform = "none";
+            }
+        });
+
+        // Reset hamburger styles on resize if moving to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+                const bars = hamburger.querySelectorAll(".bar");
+                bars[0].style.transform = "none";
+                bars[1].style.opacity = "1";
+                bars[2].style.transform = "none";
+            }
+        });
+
+        // Smooth Scrolling is handled by CSS (scroll-behavior: smooth),
+        // but adding fallback for older browsers or specific offset needs
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Only prevent default if it's strictly an anchor link on the same page
+                if (this.getAttribute('href').startsWith('#')) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 70; // Adjust based on navbar height
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
