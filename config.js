@@ -13,7 +13,7 @@ window.SiteConfig = {
     // ----------------------------------------------------------------------------
     // 1. BASIC BUSINESS INFO & SEO
     // ----------------------------------------------------------------------------
-    businessName: "Tailoring Express",
+    businessName: "The Computerized Cobbler",
 
     // Format the phone number as it should appear on the site
     phoneDisplay: "(858) 555-0199",
@@ -21,16 +21,16 @@ window.SiteConfig = {
     phoneLink: "8585550199",
 
     // Page title that appears in browser tabs and search results
-    pageTitle: "Tailoring Express - Alterations & Tailoring in University City",
+    pageTitle: "The Computerized Cobbler - Expert Shoe & Leather Repair in San Diego",
     // Meta description with your business details for Google search results
-    metaDescription: "Expert alterations and tailoring in University City, San Diego. Precision fits, fast turnaround, and trusted local service.",
+    metaDescription: "Expert shoe repair, boot resoling, and leather restoration at The Computerized Cobbler in San Diego. Quality craftsmanship guaranteed.",
 
     // ----------------------------------------------------------------------------
     // 2. BRAND COLORS
     // ----------------------------------------------------------------------------
     // Change the hex codes below to match your brand colors
     colors: {
-        navy: "#0A192F",        // Main dark color (used for backgrounds, navbar, titles)
+        navy: "#3E2723",        // Main dark color (used for backgrounds, navbar, titles)
         white: "#FFFFFF",       // Main light color
         gold: "#D4AF37",        // Primary accent color (buttons, icons, highlights)
         goldHover: "#b5952f",   // Darker shade of the accent color for hover effects
@@ -43,11 +43,11 @@ window.SiteConfig = {
     // 3. HERO SECTION (TOP OF PAGE)
     // ----------------------------------------------------------------------------
     // URL of the main background image
-    heroImage: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1549558549-415fe4c37b60?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     // Main headline
-    heroTitle: "Expert Alterations & Tailoring in University City.",
+    heroTitle: "Expert Shoe & Leather Repair in San Diego.",
     // Subheadline below the main title
-    heroSubtitle: "Precision fits, fast turnaround, and trusted local service for all your clothing needs.",
+    heroSubtitle: "Expert repairs, complete restoration, and trusted local service for your favorite footwear and leather accessories.",
 
     // ----------------------------------------------------------------------------
     // 4. SERVICES
@@ -55,24 +55,24 @@ window.SiteConfig = {
     // You can add, edit, or remove services in this list.
     services: [
         {
-            icon: "👔",
-            title: "Suit & Dress Alterations",
-            description: "Expert alterations for jackets, trousers, bridal gowns, and formal wear."
+            icon: "👞",
+            title: "Sole & Heel Replacement",
+            description: "Complete resoling and heel block repairs to bring your favorite dress shoes back to life."
         },
         {
-            icon: "👖",
-            title: "Everyday Hemming & Tapering",
-            description: "Perfect fit for your everyday jeans, slacks, and skirts."
+            icon: "✨",
+            title: "Leather Conditioning",
+            description: "Deep cleaning, polishing, and restoration to protect your footwear from the elements."
         },
         {
-            icon: "🧵",
-            title: "Repairs & Zippers",
-            description: "Quality patching, button replacement, and zipper fixes to extend garment life."
+            icon: "👢",
+            title: "Boot Repair & Hardware",
+            description: "Zipper repair, hardware replacement, and weatherproofing for all types of boots."
         },
         {
-            icon: "📏",
-            title: "Custom Fitting",
-            description: "Transforming off-the-rack clothing to look and feel completely bespoke."
+            icon: "👜",
+            title: "Handbag & Belt Restoration",
+            description: "Strap repair, stitching, and leather care for your high-end accessories."
         }
     ],
 
@@ -80,19 +80,19 @@ window.SiteConfig = {
     // 5. REVIEWS & RATING
     // ----------------------------------------------------------------------------
     // Overall rating text displayed below reviews
-    googleRatingText: "★ 4.2 Star Rating",
+    googleRatingText: "★ 4.6 Star Rating on Google",
 
     // Customer reviews to display
     reviews: [
         {
             stars: "★★★★★",
-            text: "\"Absolutely saved my suit for a wedding. Fast, professional, and fits perfectly now.\"",
-            author: "- Local Customer"
+            text: "\"Incredible craftsmanship! They completely revived my favorite pair of boots. The new soles look better than when I bought them.\"",
+            author: "- Sarah M."
         },
         {
             stars: "★★★★★",
-            text: "\"The only place in San Diego I trust with my dresses. Fair pricing and incredible attention to detail.\"",
-            author: "- Local Customer"
+            text: "\"The best shoe repair in San Diego. They fixed a broken heel and polished my dress shoes to perfection right before a big event.\"",
+            author: "- James T."
         }
     ],
 
@@ -110,7 +110,7 @@ window.SiteConfig = {
     // 7. FOOTER & LOCATION
     // ----------------------------------------------------------------------------
     // Business address (use <br> for line breaks)
-    address: "📍 3232 Governor Dr<br>San Diego, CA 92122",
+    address: "📍 8915 Towne Centre Dr, Suite 114<br>San Diego, CA 92122",
 
     // Store hours
     hours: [
@@ -121,8 +121,8 @@ window.SiteConfig = {
 
     // Google Maps iframe URL source
     // Search your address on Google Maps, click "Share" -> "Embed a map", and copy the URL from the 'src' attribute.
-    mapSrc: "https://maps.google.com/maps?q=Tailoring%20Express,%203232%20Governor%20Dr,%20San%20Diego,%20CA%2092122&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    mapSrc: "https://maps.google.com/maps?q=8915%20Towne%20Centre%20Dr,%20San%20Diego,%20CA%2092122&t=&z=15&ie=UTF8&iwloc=&output=embed",
 
     // Copyright text at the very bottom
-    copyrightText: "&copy; 2026 Tailoring Express. All rights reserved."
+    copyrightText: "&copy; 2026 The Computerized Cobbler. All rights reserved."
 };
