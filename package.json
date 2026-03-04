@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "Tailoring Express website with automated tests.",
+  "description": "The Computerized Cobbler website with automated tests.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
