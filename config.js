@@ -16,9 +16,9 @@ window.SiteConfig = {
     businessName: "The Computerized Cobbler",
 
     // Format the phone number as it should appear on the site
-    phoneDisplay: "(858) 555-0199",
+    phoneDisplay: "(858) 558-9328",
     // Format the phone number for links (no spaces or special characters except + if needed)
-    phoneLink: "8585550199",
+    phoneLink: "8585589328",
 
     // Page title that appears in browser tabs and search results
     pageTitle: "The Computerized Cobbler - Expert Shoe & Leather Repair in San Diego",
@@ -114,7 +114,7 @@ window.SiteConfig = {
 
     // Store hours
     hours: [
-        "🕒 Mon-Fri: 9 AM - 6 PM",
+        "🕒 Mon-Fri: 10 AM - 6 PM",
         "🕒 Sat: 10 AM - 4 PM",
         "🕒 Sun: Closed"
     ],
