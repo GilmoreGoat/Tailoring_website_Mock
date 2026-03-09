@@ -53,7 +53,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 e.preventDefault();
                 const headerOffset = 70; // Adjust based on navbar height
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
                 window.scrollTo({
                     top: offsetPosition,
